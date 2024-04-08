@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[4102],{7157:s=>{s.exports=JSON.parse('[{"label":"log","permalink":"/solution-watsonx-orchestrate/flight-logs/tags/log","count":1},{"label":"sprint","permalink":"/solution-watsonx-orchestrate/flight-logs/tags/sprint","count":1}]')}}]);
