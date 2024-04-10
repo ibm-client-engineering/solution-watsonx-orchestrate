@@ -130,7 +130,7 @@ async function createconfig() {
           },
         },
         navbar: {
-          title: "| Insert Solution Name",
+          title: "| Watsonx Orchesrtate Unified Agent",
           logo: {
             alt: "IBM Client Engineering Logo",
             src: "img/logo.svg",
