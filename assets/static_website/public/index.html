@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prudential Unified Chatbot</title>
+    <style>
+        /* Set background image */
+        body {
+            background-image: url("https://media.github.ibm.com/user/386696/files/cc56cfd2-afdf-4e76-90d0-242e2125b56a"); /* Replace 'your-image-file.jpg' with the path to your image */
+            background-size: cover; /* Adjusts the size of the background image to cover the entire container */
+            background-repeat: no-repeat; /* Prevents the background image from repeating */
+            /* You can add more properties like background-position, background-attachment, etc. as needed */
+        }
+
+        /* Additional CSS styling for content */
+        .content {
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.watsonAssistantChatOptions = {
+          showRestartButton: true,
+          integrationID: "1f0ffb77-b696-4780-9a19-7ef80c3eb619", // The ID of this integration.
+          region: "aws-us-east-1", // The region your integration is hosted in.
+          serviceInstanceID: "20240412-1232-5210-7068-d42e47e8b280", // The ID of your service instance.
+          
+          serviceDesk: {
+            integrationType: 'genesyswebmessenger',
+            genesysMessenger: {
+              scriptURL: 'https://apps.cac1.pure.cloud/genesys-bootstrap/genesys.min.js',
+              deploymentID: 'b01d200d-0f69-4bed-9bc8-c316eff34113',
+              environment: 'prod-cac1',
+            },
+          },
+          
+          onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+</body>
+</html>
