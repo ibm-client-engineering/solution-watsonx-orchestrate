@@ -6,7 +6,7 @@ custom_edit_url: null
 ---
 
 # Overview
-
+<div style={{ borderBottom: '1px solid #000', marginTop: '20px', marginBottom: '20px' }}></div>
 The goal of a solution doc is to outline a clear and actionable plan for implementing a unified agent that effectively 
 leverages generative AI to route conversations to the appropriate actions and integrations. This document serves as a blueprint for developers
 and project managers by providing a detailed roadmap for the overall implementation and configuration of various generative AI capabilities and third-party integrations,
@@ -15,4 +15,47 @@ as well as outlining the necessary infrastructure and workflows.
 This solution doc will address the different use cases for this soltuion, as well as outline the necessary requirements for building out each solution component to ultimately 
 demonstrate a successful implementation of the unified agent with generative AI capabilities.
 
-# Solution Components1  
+The objective of this solution is to demonstrate a chatbot which has the ability to orchestrate conversations to the
+appropriate channels and/or 3rd-party applications while leveraging generative AI technologies. This unified agent solution revolves around four key use cases:
+1. User Authentication
+2. Generative AI based routing
+3. RAG Document Search
+4. Integrations
+
+### **Products Leveraged:**
+* watsonx Orchestrate
+* watsonx Discovery (WIP)
+* watsonx.ai
+* IBM Cloud Object Storage
+* IBM Security Verify (WIP)
+
+## Solution Components
+---
+
+![Solution Components](https://media.github.ibm.com/user/386696/files/fb75811d-230c-4f32-861c-6d6d4a308bb3)
+
+### **Web-Chat Interface**
+* Leveraging IBM Cloud Object Storage to host a static website for the chatbot.
+* Configuration Steps [link]
+
+### **Security**
+
+Security can be demostrated in one of two ways:
+
+1. **Simulation:** <br></br>
+    * Leverage stored user information (e.g. username, password, role, access, etc,) in a data structure within the Assistant Builder.
+    * Configuration Steps [LINK]
+
+2. **Security Verify SSO**
+    * Configuration Steps [LINK]
+
+### **Conversational Engine**
+    * Built within the watsonx Orchestrate Assistant Builder
+    * Built out Generative AI layer to route conversations to the right actions based on the logged-in user's access/role.
+
+### **Integrations**
+* Leverage native assistant builder extensions to integrate with Genesys and subordinate bots.
+* Leverage watsonx Orchestrate skills to integrate with ServiceNow.
+
+### **Data Repository**
+* Leverage watsonx Discovery to store documents relevant to the use case
